@@ -7,8 +7,14 @@
 
 (define chop
   (lambda (x ls)
-    -1
-    ))
+    (letrec ([f (lambda (n lst offset)
+                  (if (pair? ls)
+                      (cond
+                        [(equal? (first ls) x)
+                         0]
+                        [else -1])
+                      -1))])
+      (f x ls 0))))
 
 (module+ test
   (chop 1 z)
