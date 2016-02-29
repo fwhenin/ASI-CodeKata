@@ -1,0 +1,2 @@
+- I started thinking that I can have a chop function that calls itself with a smaller array (first or second half) but then realized quickly that the final index will always be 0 (if found) or -1 (if not found) since the last time it calls chop with an array of 1 item 
+- to discover the midpoint of the array section, I again made the mistake of getting the index WITHIN the chopped array
