@@ -1,0 +1,2 @@
+Implementing the chop was a lot easier the second time around. Based on the base case, I was able build a iterative chop using a do-while loop.
+There was special handling for the case where the passed in list is empty, and my initial implementation was a while loop instead of a do-while.
