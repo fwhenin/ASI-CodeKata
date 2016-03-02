@@ -1,0 +1,6 @@
+I initially implemented the recursive binary search thinking that I would simply split the original array and pass the smaller subsets
+into the recursive method, but realized that the index of the midpoint would be invalid relative to the original array. Instead, I ended up
+passing in a Range object, which represents a set of indices to represent the halves in the original array.
+
+Implementing the recursive behavior for the left half was trivial in my case, but implementation of the right half required some tweaking,
+since initially I was off by one and was trying to use the maxElement property.
