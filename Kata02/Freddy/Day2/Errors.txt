@@ -1,0 +1,2 @@
+- this time it was WAY quicker... the only error I made was I forgot to 
+substract 1 from the mid point if the needle is below the value in the middle
