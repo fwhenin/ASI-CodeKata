@@ -35,34 +35,24 @@
    (check-equal? (chop 3 '()) -1 "empty list")
    (check-equal? (chop 3 '(1)) -1 "not present in one element list")
    (check-equal? (chop 1 '(1)) 0 "one element match returns 0")
-   ;
+   
    (check-equal? (chop 1 '(1 3 5)) 0    "3-element list: test first element")
    (check-equal? (chop 3 '(1 3 5)) 1    "3-element list: test second element")
-;   (check-equal? (chop 5 '(1 3 5)) 2    "test" )
-;   (check-equal? (chop 0 '(1 3 5)) -1   "test" )
-;   (check-equal? (chop 2 '(1 3 5)) -1   "test" )
-;   (check-equal? (chop 4 '(1 3 5)) -1   "test" )
-;   (check-equal? (chop 6 '(1 3 5)) -1   "test" )
-;
-;(check-equal? (chop 1 '(1 3 5 7)) 0  "test" )
-;(check-equal? (chop 3 '(1 3 5 7)) 1  "test" )
-;(check-equal? (chop 5 '(1 3 5 7)) 2  "test" )
-;(check-equal? (chop 7 '(1 3 5 7)) 3  "test" )
-;(check-equal? (chop 0 '(1 3 5 7)) -1 "test" )
-;(check-equal? (chop 2 '(1 3 5 7)) -1 "test" )
-;(check-equal? (chop 4 '(1 3 5 7)) -1 "test" )
-;(check-equal? (chop 6 '(1 3 5 7)) -1 "test" )
-;(check-equal? (chop 8 '(1 3 5 7)) -1 "test" )
+   (check-equal? (chop 5 '(1 3 5)) 2    "test" )
+   (check-equal? (chop 0 '(1 3 5)) -1   "test" )
+   (check-equal? (chop 2 '(1 3 5)) -1   "test" )
+   (check-equal? (chop 4 '(1 3 5)) -1   "test" )
+   (check-equal? (chop 6 '(1 3 5)) -1   "test" )
    
-;   (test-case
-;    "List has length 4 and all elements even"
-;    (let ([lst (list 2 4 6 9)])
-;      (check = (length lst) 4)
-;      (for-each
-;        (lambda (elt)
-;          (check-pred even? elt))
-;      lst)))))
-   ))
+   (check-equal? (chop 1 '(1 3 5 7)) 0  "test" )
+   (check-equal? (chop 3 '(1 3 5 7)) 1  "test" )
+   (check-equal? (chop 5 '(1 3 5 7)) 2  "test" )
+   (check-equal? (chop 7 '(1 3 5 7)) 3  "test" )
+   (check-equal? (chop 0 '(1 3 5 7)) -1 "test" )
+   (check-equal? (chop 2 '(1 3 5 7)) -1 "test" )
+   (check-equal? (chop 4 '(1 3 5 7)) -1 "test" )
+   (check-equal? (chop 6 '(1 3 5 7)) -1 "test" )
+   (check-equal? (chop 8 '(1 3 5 7)) -1 "test" )))
 
 (require rackunit/text-ui)
  
