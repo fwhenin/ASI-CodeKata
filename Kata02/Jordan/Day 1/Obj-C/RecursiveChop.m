@@ -26,19 +26,18 @@
     if (startIndex > endIndex) {
         return -1;
     }
+    
+    NSInteger centerIndex = (startIndex + endIndex) / 2;
+    
+    NSInteger value = [(NSNumber *)[list objectAtIndex:centerIndex] integerValue];
+    if (target < value) {
+        return [self recursiveChopForTarget:target inList:list withStartIndex:startIndex endIndex:centerIndex - 1];
+    }
+    else if (target > value) {
+        return [self recursiveChopForTarget:target inList:list withStartIndex:centerIndex + 1 endIndex:endIndex];
+    }
     else {
-        NSInteger centerIndex = (startIndex + endIndex) / 2;
-        
-        NSInteger value = [(NSNumber *)[list objectAtIndex:centerIndex] integerValue];
-        if (target < value) {
-            return [self recursiveChopForTarget:target inList:list withStartIndex:startIndex endIndex:centerIndex - 1];
-        }
-        else if (target > value) {
-            return [self recursiveChopForTarget:target inList:list withStartIndex:centerIndex + 1 endIndex:endIndex];
-        }
-        else {
-            return centerIndex;
-        }
+        return centerIndex;
     }
 }
 

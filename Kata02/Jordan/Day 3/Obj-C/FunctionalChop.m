@@ -19,20 +19,19 @@
         if (startIndex > endIndex) {
             return -1;
         }
+        
+        NSInteger centerIndex = (endIndex + startIndex) / 2;
+        
+        NSInteger value = [(NSNumber *)[list objectAtIndex:centerIndex] integerValue];
+        
+        if (target < value) {
+            return weakVorpalSlicer(startIndex, centerIndex - 1);
+        }
+        else if (target > value) {
+            return weakVorpalSlicer(centerIndex + 1, endIndex);
+        }
         else {
-            NSInteger centerIndex = (endIndex + startIndex) / 2;
-            
-            NSInteger value = [(NSNumber *)[list objectAtIndex:centerIndex] integerValue];
-            
-            if (target < value) {
-                return weakVorpalSlicer(startIndex, centerIndex - 1);
-            }
-            else if (target > value) {
-                return weakVorpalSlicer(centerIndex + 1, endIndex);
-            }
-            else {
-                return centerIndex;
-            }
+            return centerIndex;
         }
     };
     

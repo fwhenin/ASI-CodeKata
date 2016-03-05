@@ -10,18 +10,18 @@ func karateChop(target: Int, list: [Int]) -> Int {
 func recursiveChop(target: Int, list: [Int], var range: Range<Int>) -> Int {
     if list[range].isEmpty {
         return -1
+    }
+    
+    let centerIndex = (range.endIndex + range.startIndex) / 2
+    
+    if target < list[centerIndex] {
+        range.endIndex = centerIndex
+        return recursiveChop(target, list: list, range: range)
+    } else if target > list[centerIndex] {
+        range.startIndex = centerIndex + 1
+        return recursiveChop(target, list: list, range: range)
     } else {
-        let centerIndex = (range.endIndex + range.startIndex) / 2
-        
-        if target < list[centerIndex] {
-            range.endIndex = centerIndex
-            return recursiveChop(target, list: list, range: range)
-        } else if target > list[centerIndex] {
-            range.startIndex = centerIndex + 1
-            return recursiveChop(target, list: list, range: range)
-        } else {
-            return centerIndex
-        }
+        return centerIndex
     }
 }
 

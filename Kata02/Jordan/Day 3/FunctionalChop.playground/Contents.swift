@@ -8,18 +8,18 @@ func karateChop(target: Int, list: [Int]) -> Int {
     vorpalSlicer = { (var range: Range<Int>) -> Int in
         if list[range].isEmpty {
             return -1
+        }
+        
+        let centerIndex = (range.endIndex + range.startIndex) / 2
+        
+        if target < list[centerIndex] {
+            range.endIndex = centerIndex
+            return vorpalSlicer(range)
+        } else if target > list[centerIndex] {
+            range.startIndex = centerIndex + 1
+            return vorpalSlicer(range)
         } else {
-            let centerIndex = (range.endIndex + range.startIndex) / 2
-            
-            if target < list[centerIndex] {
-                range.endIndex = centerIndex
-                return vorpalSlicer(range)
-            } else if target > list[centerIndex] {
-                range.startIndex = centerIndex + 1
-                return vorpalSlicer(range)
-            } else {
-                return centerIndex
-            }
+            return centerIndex
         }
     }
     
