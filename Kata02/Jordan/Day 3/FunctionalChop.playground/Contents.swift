@@ -23,7 +23,7 @@ func karateChop(target: Int, list: [Int]) -> Int {
         }
     }
     
-    return vorpalSlicer(Range<Int>(start: list.startIndex, end: list.endIndex))
+    return vorpalSlicer(0..<list.endIndex)
 }
 
 assert(karateChop(3, list: []) == -1)

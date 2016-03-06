@@ -3,7 +3,7 @@
 import UIKit
 
 func karateChop(target: Int, list: [Int]) -> Int {
-    let range = Range<Int>(start: list.startIndex, end: list.endIndex)
+    let range = 0..<list.endIndex
     return recursiveChop(target, list: list, range: range)
 }
 

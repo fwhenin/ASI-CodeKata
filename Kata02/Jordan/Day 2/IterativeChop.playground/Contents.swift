@@ -4,7 +4,7 @@ import UIKit
 
 func karateChop(target: Int, list: [Int]) -> Int {
     
-    var range = Range<Int>(start: list.startIndex, end: list.endIndex)
+    var range = 0..<list.endIndex
     
     while !list[range].isEmpty {
         let centerIndex = (range.endIndex + range.startIndex) / 2
