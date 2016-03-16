@@ -3,26 +3,25 @@
 import UIKit
 
 func karateChop(target: Int, list: [Int]) -> Int {
-    let range = 0..<list.endIndex
-    return recursiveChop(target, list: list, range: range)
-}
-
-func recursiveChop(target: Int, list: [Int], var range: Range<Int>) -> Int {
-    if list[range].isEmpty {
-        return -1
+    
+    var vorpalSlicer: ((ArraySlice<Int>) -> Int)!
+    vorpalSlicer = { (slice: ArraySlice<Int>) -> Int in
+        if slice.isEmpty {
+            return -1
+        }
+        
+        let centerIndex = (slice.endIndex + slice.startIndex) / 2
+        
+        if target < slice[centerIndex] {
+            return vorpalSlicer(slice[slice.startIndex..<centerIndex])
+        } else if target > slice[centerIndex] {
+            return vorpalSlicer(slice[centerIndex+1..<slice.endIndex])
+        } else {
+            return centerIndex
+        }
     }
     
-    let centerIndex = (range.endIndex + range.startIndex) / 2
-    
-    if target < list[centerIndex] {
-        range.endIndex = centerIndex
-        return recursiveChop(target, list: list, range: range)
-    } else if target > list[centerIndex] {
-        range.startIndex = centerIndex + 1
-        return recursiveChop(target, list: list, range: range)
-    } else {
-        return centerIndex
-    }
+    return vorpalSlicer(list[0..<list.endIndex])
 }
 
 assert(karateChop(3, list: []) == -1)

@@ -1,0 +1,3 @@
+This one was the toughest out of all of them to write, mainly because I didn't know how else to differentiate it from the previous iterations. 
+What led me to this approach was that my previous approaches were all similar in that internally they all returned the midpoint's index
+from within the loop / recursive function. Instead, this approach takes a range and halves it until there is only one element left.

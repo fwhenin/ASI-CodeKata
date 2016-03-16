@@ -1,0 +1,4 @@
+Toughest version to write so far. There were problems recursing from within the closure to call itself. I'm not 100% sure if this is a valid version,
+since it is a variation of the recursive chop. The only difference is that the recursion is done in a local function.
+
+The main benefit of this is that the function captures the local variable "list", so we're not passing the list into the recursing function every time.

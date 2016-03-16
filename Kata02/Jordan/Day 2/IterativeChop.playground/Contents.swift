@@ -2,18 +2,12 @@
 
 import UIKit
 
-let kTargetNotFound = -1
-
 func karateChop(target: Int, list: [Int]) -> Int {
-    if list.isEmpty {
-        return kTargetNotFound
-    }
     
-    var range = Range<Int>(start: list.startIndex, end: list.endIndex)
-    var centerIndex: Int!
+    var range = 0..<list.endIndex
     
-    repeat {
-        centerIndex = (range.endIndex + range.startIndex) / 2
+    while !list[range].isEmpty {
+        let centerIndex = (range.endIndex + range.startIndex) / 2
         if target < list[centerIndex] {
             range.endIndex = centerIndex
         } else if target > list[centerIndex] {
@@ -22,9 +16,8 @@ func karateChop(target: Int, list: [Int]) -> Int {
             return centerIndex
         }
     }
-    while !list[range].isEmpty && target != list[centerIndex]
     
-    return kTargetNotFound
+    return -1
 }
 
 assert(karateChop(3, list: []) == -1)
