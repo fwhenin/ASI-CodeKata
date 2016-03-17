@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{3947E667-4C90-4C3A-BEB9-7148D6FE0D7C}") = "kata2-v2", "kata2-v2\kata2-v2.dproj", "{47579129-2389-41E4-943A-5A3B7E224EE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Unittest|Any CPU = Unittest|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47579129-2389-41E4-943A-5A3B7E224EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47579129-2389-41E4-943A-5A3B7E224EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47579129-2389-41E4-943A-5A3B7E224EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47579129-2389-41E4-943A-5A3B7E224EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47579129-2389-41E4-943A-5A3B7E224EE6}.Unittest|Any CPU.ActiveCfg = Unittest|Any CPU
+		{47579129-2389-41E4-943A-5A3B7E224EE6}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
+	EndGlobalSection
+EndGlobal
