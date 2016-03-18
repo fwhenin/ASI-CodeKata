@@ -2,7 +2,7 @@ function chop(n, srtArr) {
 	var min = 0;
 	var max = srtArr.length;
 	// get the midpoint of the array.  I used a ternary here to cover arrays with one value.
-		var mid = max === 1 ? 0 : (min + max) % 2;
+	var mid = max === 1 ? 0 : (min + max) % 2;
   
 	// check mid first.
 	if(srtArr[mid] === n) {
