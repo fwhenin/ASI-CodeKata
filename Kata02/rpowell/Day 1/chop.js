@@ -45,6 +45,6 @@ function testChop() {
 	console.log(chop(4, [1, 3, 5, 7]) === -1);
 	console.log(chop(6, [1, 3, 5, 7]) === -1);
 	console.log(chop(8, [1, 3, 5, 7]) === -1);
- }
+}
  
- testChop();
+testChop();
