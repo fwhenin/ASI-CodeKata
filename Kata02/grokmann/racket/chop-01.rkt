@@ -1,7 +1,7 @@
 #lang racket
 ;chop(int, array_of_int)  -> int
 
-(provide (all-defined-out)) ;; so we can put tests in a second file
+(provide chop) ;; so we can put tests in a second file
 
 (define z (range 1 10))
 
