@@ -14,6 +14,7 @@ So this is a simple kata: a series of questions, each asking for a rough answer.
   - A. Estimating 50 chars for name, 100 char for address, 10 char for ph# = ~160b * 20k = 3.2Mb 
 
 - I’m storing 1,000,000 integers in a binary tree. Roughly how many nodes and levels can I expect the tree to have? Roughly how much space will it occupy on a 32-bit architecture?
+  - Kind of wrong, kind of right. Depends on the type of tree.
   - A1. 1,000,000 ~~ 2^20 ~~ 20 levels, nodes = 2^19 ~ 500k
   - A2. 1.5Mb
 
@@ -25,4 +26,4 @@ So this is a simple kata: a series of questions, each asking for a rough answer.
   - 1.5 s per ^10 ~ 9s
 
 - Unix passwords are stored using a one-way hash function: the original string is converted to the ‘encrypted’ password string, which cannot be converted back to the original string. One way to attack the password file is to generate all possible cleartext passwords, applying the password hash to each in turn and checking to see if the result matches the password you’re trying to crack. If the hashes match, then the string you used to generate the hash is the original password (or at least, it’s as good as the original password as far as logging in is concerned). In our particular system, passwords can be up to 16 characters long, and there are 96 possible characters at each position. If it takes 1mS to generate the password hash, is this a viable approach to attacking a password?
-  - No. 96! x 16! = 2.071356198912 × 10^163/10^3/s = 2.07 × 10^160s 
+  - No. Fixed the math on this after discussing: (96^16)/(1000 × 60 × 60 × 24 × 365) = 1.65018684889166 * 10^21 days
