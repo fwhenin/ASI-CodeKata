@@ -4,10 +4,10 @@ Martin Fowler gave me a hard time for Kata02, complaining that it was yet anothe
 Here’s an exercise in three parts to do with real world data. Try hard not to read ahead—do each part in turn.
 
 ## Part One: Weather Data
-In [weather.dat](http://codekata.com/data/04/weather.dat) you’ll find daily weather data for Morristown, NJ for June 2002. Download this text file, then write a program to output the day number (column one) with the smallest temperature spread (the maximum temperature is the second column, the minimum the third column).
+In [weather.dat](./weather.dat) you’ll find daily weather data for Morristown, NJ for June 2002. Download this text file, then write a program to output the day number (column one) with the smallest temperature spread (the maximum temperature is the second column, the minimum the third column).
 
 ## Part Two: Soccer League Table
-The file [football.dat](http://codekata.com/data/04/football.dat) contains the results from the English Premier League for 2001/2. The columns labeled ‘F’ and ‘A’ contain the total number of goals scored for and against each team in that season (so Arsenal scored 79 goals against opponents, and had 36 goals scored against them). Write a program to print the name of the team with the smallest difference in ‘for’ and ‘against’ goals.
+The file [football.dat](./football.dat) contains the results from the English Premier League for 2001/2. The columns labeled ‘F’ and ‘A’ contain the total number of goals scored for and against each team in that season (so Arsenal scored 79 goals against opponents, and had 36 goals scored against them). Write a program to print the name of the team with the smallest difference in ‘for’ and ‘against’ goals.
 
 ## Part Three: DRY Fusion
 Take the two programs written previously and factor out as much common code as possible, leaving you with two smaller programs and some kind of shared functionality.
