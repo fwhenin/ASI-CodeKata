@@ -24,7 +24,7 @@ class WeatherData {
             let max = Double(day[1].stringByTrimmingCharactersInSet(kTrimCharacterSet))!
             let min = Double(day[2].stringByTrimmingCharactersInSet(kTrimCharacterSet))!
             let currentRange = max - min
-            if (currentRange < minTempRange) {
+            if currentRange < minTempRange {
                 minDay = day[0]
                 minTempRange = currentRange
             }
