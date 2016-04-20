@@ -5,20 +5,26 @@
 
 (require racket/file)
 
+(define (get-col-from-row row col)
+   (string-trim (substring row (car col) (+ (car col) (cadr col)))))
+
 (define get-min-spread 
   (lambda
       ([file-name "../football.dat"]
+       [name-col '(7 16)] ;col is list of start position and length
+       [val1-col '(43 2)]
+       [val2-col '(50 2)]
        [min-spread-team ""]
        [min-spread -1])
     
     (define in (open-input-file file-name))
     
     (for ([line (in-lines in)])
-      (define for-goals (string->number (string-trim (substring line 43 45))))
-      (define against-goals (string->number (string-trim (substring line 50 52))))
+      (define for-goals (string->number (get-col-from-row line val1-col)))
+      (define against-goals (string->number (get-col-from-row line val2-col)))
       
       (when for-goals 
-        (define team (string-trim (substring line 7 23)))
+        (define team (get-col-from-row line name-col))
         ;    (displayln (string-append team ": For: " (number->string for-goals) " Against: " (number->string against-goals)))
         
         (when team 
