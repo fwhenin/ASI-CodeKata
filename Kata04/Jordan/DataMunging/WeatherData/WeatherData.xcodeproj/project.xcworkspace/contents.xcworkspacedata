@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DataMunging.xcodeproj">
+      location = "self:WeatherData.xcodeproj">
    </FileRef>
 </Workspace>

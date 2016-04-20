@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C95C2B3C1CC6EB080030B2F8"
-               BuildableName = "DataMunging"
-               BlueprintName = "DataMunging"
-               ReferencedContainer = "container:DataMunging.xcodeproj">
+               BlueprintIdentifier = "C95C2BA51CC6F9860030B2F8"
+               BuildableName = "WeatherData.app"
+               BlueprintName = "WeatherData"
+               ReferencedContainer = "container:WeatherData.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C95C2B3C1CC6EB080030B2F8"
-            BuildableName = "DataMunging"
-            BlueprintName = "DataMunging"
-            ReferencedContainer = "container:DataMunging.xcodeproj">
+            BlueprintIdentifier = "C95C2BA51CC6F9860030B2F8"
+            BuildableName = "WeatherData.app"
+            BlueprintName = "WeatherData"
+            ReferencedContainer = "container:WeatherData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C95C2B3C1CC6EB080030B2F8"
-            BuildableName = "DataMunging"
-            BlueprintName = "DataMunging"
-            ReferencedContainer = "container:DataMunging.xcodeproj">
+            BlueprintIdentifier = "C95C2BA51CC6F9860030B2F8"
+            BuildableName = "WeatherData.app"
+            BlueprintName = "WeatherData"
+            ReferencedContainer = "container:WeatherData.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C95C2B3C1CC6EB080030B2F8"
-            BuildableName = "DataMunging"
-            BlueprintName = "DataMunging"
-            ReferencedContainer = "container:DataMunging.xcodeproj">
+            BlueprintIdentifier = "C95C2BA51CC6F9860030B2F8"
+            BuildableName = "WeatherData.app"
+            BlueprintName = "WeatherData"
+            ReferencedContainer = "container:WeatherData.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DataMunging.xcscheme</key>
+		<key>WeatherData.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C95C2B3C1CC6EB080030B2F8</key>
+		<key>C95C2BA51CC6F9860030B2F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
