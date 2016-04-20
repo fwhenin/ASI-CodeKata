@@ -20,15 +20,15 @@
     (define in (open-input-file file-name))
     
     (for ([line (in-lines in)])
-      (define for-goals (string->number (get-col-from-row line val1-col)))
-      (define against-goals (string->number (get-col-from-row line val2-col)))
+      (define val1 (string->number (get-col-from-row line val1-col)))
+      (define val2 (string->number (get-col-from-row line val2-col)))
       
-      (when for-goals 
-        (define team (get-col-from-row line name-col))
+      (when val1 
+        (define name (get-col-from-row line name-col))
         ;    (displayln (string-append team ": For: " (number->string for-goals) " Against: " (number->string against-goals)))
         
-        (when team 
-          (define spread (abs (- for-goals against-goals)))
+        (when name 
+          (define spread (abs (- val1 val2)))
           (when (or (< spread min-spread) (< min-spread 0))
             
             ;        (displayln "BEFORE")
@@ -36,7 +36,7 @@
             ;        (display "\tspread :") (displayln spread)
             
             (set! min-spread spread)
-            (set! min-spread-team team)
+            (set! min-spread-team name)
             
             ;        (displayln "AFTER")
             ;        (display "\tspread :") (displayln spread)
