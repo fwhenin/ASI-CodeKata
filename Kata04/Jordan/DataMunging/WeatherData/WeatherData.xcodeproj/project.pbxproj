@@ -12,8 +12,8 @@
 		C95C2BAF1CC6F9860030B2F8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95C2BAD1CC6F9860030B2F8 /* MainMenu.xib */; };
 		C95C2BB71CC6F9A50030B2F8 /* weather.dat in Resources */ = {isa = PBXBuildFile; fileRef = C95C2BB61CC6F9A50030B2F8 /* weather.dat */; };
 		C95C2BB91CC6F9DB0030B2F8 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95C2BB81CC6F9DB0030B2F8 /* WeatherData.swift */; };
-		C98B31DE1CC880C10093E175 /* DifferenceCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31DD1CC880C10093E175 /* DifferenceCommon.framework */; };
-		C98B31E01CC880C50093E175 /* DifferenceCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31DD1CC880C10093E175 /* DifferenceCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C98B31E91CC882F20093E175 /* DifferenceCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31E71CC882E20093E175 /* DifferenceCommon.framework */; };
+		C98B31EA1CC882F20093E175 /* DifferenceCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31E71CC882E20093E175 /* DifferenceCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C98B31E01CC880C50093E175 /* DifferenceCommon.framework in Embed Frameworks */,
+				C98B31EA1CC882F20093E175 /* DifferenceCommon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +38,7 @@
 		C95C2BB01CC6F9860030B2F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C95C2BB61CC6F9A50030B2F8 /* weather.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weather.dat; sourceTree = "<group>"; };
 		C95C2BB81CC6F9DB0030B2F8 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
-		C98B31DD1CC880C10093E175 /* DifferenceCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DifferenceCommon.framework; sourceTree = "<group>"; };
+		C98B31E71CC882E20093E175 /* DifferenceCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DifferenceCommon.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C98B31DE1CC880C10093E175 /* DifferenceCommon.framework in Frameworks */,
+				C98B31E91CC882F20093E175 /* DifferenceCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 		C95C2B9D1CC6F9860030B2F8 = {
 			isa = PBXGroup;
 			children = (
-				C98B31DD1CC880C10093E175 /* DifferenceCommon.framework */,
+				C98B31E71CC882E20093E175 /* DifferenceCommon.framework */,
 				C95C2BA81CC6F9860030B2F8 /* WeatherData */,
 				C95C2BA71CC6F9860030B2F8 /* Products */,
 			);

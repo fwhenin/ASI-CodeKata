@@ -11,6 +11,7 @@
 		C98B31AF1CC86D890093E175 /* DifferenceDataMungerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B31AD1CC86D890093E175 /* DifferenceDataMungerConfig.swift */; };
 		C98B31B01CC86D890093E175 /* DifferenceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B31AE1CC86D890093E175 /* DifferenceData.swift */; };
 		C98B31BF1CC875A20093E175 /* DifferenceDataMunger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B31BE1CC875A20093E175 /* DifferenceDataMunger.swift */; };
+		C98B31E21CC881B50093E175 /* DifferenceDataTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B31E11CC881B50093E175 /* DifferenceDataTranslator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		C98B31AD1CC86D890093E175 /* DifferenceDataMungerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceDataMungerConfig.swift; sourceTree = "<group>"; };
 		C98B31AE1CC86D890093E175 /* DifferenceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceData.swift; sourceTree = "<group>"; };
 		C98B31BE1CC875A20093E175 /* DifferenceDataMunger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceDataMunger.swift; sourceTree = "<group>"; };
+		C98B31E11CC881B50093E175 /* DifferenceDataTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceDataTranslator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C98B31BE1CC875A20093E175 /* DifferenceDataMunger.swift */,
+				C98B31E11CC881B50093E175 /* DifferenceDataTranslator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98B31E21CC881B50093E175 /* DifferenceDataTranslator.swift in Sources */,
 				C98B31B01CC86D890093E175 /* DifferenceData.swift in Sources */,
 				C98B31AF1CC86D890093E175 /* DifferenceDataMungerConfig.swift in Sources */,
 				C98B31BF1CC875A20093E175 /* DifferenceDataMunger.swift in Sources */,

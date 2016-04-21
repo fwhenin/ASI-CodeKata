@@ -12,8 +12,8 @@
 		C90486B61CC712020053C8C6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90486B41CC712020053C8C6 /* MainMenu.xib */; };
 		C90486BE1CC712180053C8C6 /* football.dat in Resources */ = {isa = PBXBuildFile; fileRef = C90486BD1CC712180053C8C6 /* football.dat */; };
 		C90486C01CC7124D0053C8C6 /* Football.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90486BF1CC7124D0053C8C6 /* Football.swift */; };
-		C98B31DA1CC8809F0093E175 /* DifferenceCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31D91CC8809F0093E175 /* DifferenceCommon.framework */; };
-		C98B31DC1CC880A30093E175 /* DifferenceCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31D91CC8809F0093E175 /* DifferenceCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C98B31E51CC882BC0093E175 /* DifferenceCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31E31CC882B40093E175 /* DifferenceCommon.framework */; };
+		C98B31E61CC882BC0093E175 /* DifferenceCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31E31CC882B40093E175 /* DifferenceCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C98B31DC1CC880A30093E175 /* DifferenceCommon.framework in Embed Frameworks */,
+				C98B31E61CC882BC0093E175 /* DifferenceCommon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +38,7 @@
 		C90486B71CC712020053C8C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C90486BD1CC712180053C8C6 /* football.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = football.dat; sourceTree = "<group>"; };
 		C90486BF1CC7124D0053C8C6 /* Football.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Football.swift; sourceTree = "<group>"; };
-		C98B31D91CC8809F0093E175 /* DifferenceCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DifferenceCommon.framework; sourceTree = "<group>"; };
+		C98B31E31CC882B40093E175 /* DifferenceCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DifferenceCommon.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C98B31DA1CC8809F0093E175 /* DifferenceCommon.framework in Frameworks */,
+				C98B31E51CC882BC0093E175 /* DifferenceCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 		C90486A41CC712020053C8C6 = {
 			isa = PBXGroup;
 			children = (
-				C98B31D91CC8809F0093E175 /* DifferenceCommon.framework */,
+				C98B31E31CC882B40093E175 /* DifferenceCommon.framework */,
 				C90486AF1CC712020053C8C6 /* Football */,
 				C90486AE1CC712020053C8C6 /* Products */,
 			);
