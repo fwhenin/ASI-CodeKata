@@ -12,6 +12,7 @@
 		C98B31B01CC86D890093E175 /* DifferenceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B31AE1CC86D890093E175 /* DifferenceData.swift */; };
 		C98B31BF1CC875A20093E175 /* DifferenceDataMunger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B31BE1CC875A20093E175 /* DifferenceDataMunger.swift */; };
 		C98B31E21CC881B50093E175 /* DifferenceDataTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B31E11CC881B50093E175 /* DifferenceDataTranslator.swift */; };
+		C98B31ED1CC884870093E175 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B31EC1CC884870093E175 /* FileHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C98B31AE1CC86D890093E175 /* DifferenceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceData.swift; sourceTree = "<group>"; };
 		C98B31BE1CC875A20093E175 /* DifferenceDataMunger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceDataMunger.swift; sourceTree = "<group>"; };
 		C98B31E11CC881B50093E175 /* DifferenceDataTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceDataTranslator.swift; sourceTree = "<group>"; };
+		C98B31EC1CC884870093E175 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		C98B319D1CC86D250093E175 /* DifferenceCommon */ = {
 			isa = PBXGroup;
 			children = (
+				C98B31EB1CC8847B0093E175 /* Helpers */,
 				C98B31BD1CC875A20093E175 /* Classes */,
 				C98B31A71CC86D5E0093E175 /* Structs */,
 				C98B319E1CC86D250093E175 /* DifferenceCommon.h */,
@@ -78,6 +81,14 @@
 				C98B31E11CC881B50093E175 /* DifferenceDataTranslator.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		C98B31EB1CC8847B0093E175 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C98B31EC1CC884870093E175 /* FileHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 				C98B31B01CC86D890093E175 /* DifferenceData.swift in Sources */,
 				C98B31AF1CC86D890093E175 /* DifferenceDataMungerConfig.swift in Sources */,
 				C98B31BF1CC875A20093E175 /* DifferenceDataMunger.swift in Sources */,
+				C98B31ED1CC884870093E175 /* FileHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

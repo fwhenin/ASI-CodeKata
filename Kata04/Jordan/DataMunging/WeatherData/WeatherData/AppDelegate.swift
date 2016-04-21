@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import DifferenceCommon
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -15,12 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var textField: NSTextField!
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        if let path = NSBundle.mainBundle().pathForResource("weather", ofType: "dat") {
-            do {
-                let data = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-                let weatherData = WeatherData(data: data)
-                textField.stringValue = weatherData.getMinDifferenceName()
-            } catch { }
+        if let data = FileHelper.getStringResource("weather", ofType: "dat") {
+            let weatherData = WeatherData(data: data)
+            textField.stringValue = weatherData.getMinDifferenceName()
         }
     }
 
