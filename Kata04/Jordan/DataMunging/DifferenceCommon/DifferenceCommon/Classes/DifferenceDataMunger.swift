@@ -20,7 +20,13 @@ public class DifferenceDataMunger {
     }
     
     public func getMinDifferenceName() -> String {
-        var dataArray = [DifferenceData]()
+        let dataArray = self.processData()
+        let result = dataArray.minElement { $0.difference < $1.difference }!.name
+        return result
+    }
+    
+    private func processData() -> [DifferenceData] {
+        var result = [DifferenceData]()
         
         // split file by lines
         let lines = data.characters.split("\n")
@@ -36,11 +42,9 @@ public class DifferenceDataMunger {
                 let differenceData = DifferenceData(name: columns[config.nameIndex], difference: abs(minuend - subtrahend))
                 
                 // append to result
-                dataArray.append(differenceData)
+                result.append(differenceData)
             }
         }
-        
-        let result = dataArray.minElement { $0.difference < $1.difference }!.name
         
         return result
     }
