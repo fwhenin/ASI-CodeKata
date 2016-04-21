@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             do {
                 let data = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
                 let football = Football(data: data)
-                textField.stringValue = football.getTeamWithMinScoreDifference()
+                textField.stringValue = football.getMinDifferenceName()
             } catch { }
         }
     }

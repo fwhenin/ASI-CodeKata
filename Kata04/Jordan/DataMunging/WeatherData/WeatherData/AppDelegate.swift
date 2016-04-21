@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             do {
                 let data = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
                 let weatherData = WeatherData(data: data)
-                textField.stringValue = weatherData.getDayWithMinSpread()
+                textField.stringValue = weatherData.getMinDifferenceName()
             } catch { }
         }
     }

@@ -12,7 +12,23 @@
 		C90486B61CC712020053C8C6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90486B41CC712020053C8C6 /* MainMenu.xib */; };
 		C90486BE1CC712180053C8C6 /* football.dat in Resources */ = {isa = PBXBuildFile; fileRef = C90486BD1CC712180053C8C6 /* football.dat */; };
 		C90486C01CC7124D0053C8C6 /* Football.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90486BF1CC7124D0053C8C6 /* Football.swift */; };
+		C98B31D21CC87EBA0093E175 /* DifferenceCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31D11CC87EBA0093E175 /* DifferenceCommon.framework */; };
+		C98B31D41CC87EBF0093E175 /* DifferenceCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C98B31D11CC87EBA0093E175 /* DifferenceCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C98B31CB1CC87C460093E175 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C98B31D41CC87EBF0093E175 /* DifferenceCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C90486AD1CC712020053C8C6 /* Football.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Football.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		C90486B71CC712020053C8C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C90486BD1CC712180053C8C6 /* football.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = football.dat; sourceTree = "<group>"; };
 		C90486BF1CC7124D0053C8C6 /* Football.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Football.swift; sourceTree = "<group>"; };
+		C98B31D11CC87EBA0093E175 /* DifferenceCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DifferenceCommon.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98B31D21CC87EBA0093E175 /* DifferenceCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 		C90486A41CC712020053C8C6 = {
 			isa = PBXGroup;
 			children = (
+				C98B31D11CC87EBA0093E175 /* DifferenceCommon.framework */,
 				C90486AF1CC712020053C8C6 /* Football */,
 				C90486AE1CC712020053C8C6 /* Products */,
 			);
@@ -74,6 +93,7 @@
 				C90486A91CC712020053C8C6 /* Sources */,
 				C90486AA1CC712020053C8C6 /* Frameworks */,
 				C90486AB1CC712020053C8C6 /* Resources */,
+				C98B31CB1CC87C460093E175 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +261,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Football/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.autosoft.Football;
@@ -253,6 +277,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Football/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.autosoft.Football;
@@ -279,6 +307,7 @@
 				C90486BC1CC712020053C8C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
