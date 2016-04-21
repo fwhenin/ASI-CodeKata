@@ -6,7 +6,7 @@
 (require racket/file)
 
 (define (get-col-from-row row col)
-   (string-trim (substring row (car col) (+ (car col) (cadr col)))))
+  (string-trim (substring row (car col) (+ (car col) (cadr col)))))
 
 (define get-min-spread 
   (lambda
@@ -20,34 +20,27 @@
     (define in (open-input-file file-name))
     
     (for ([line (in-lines in)])
-      (define val1 (string->number (get-col-from-row line val1-col)))
-      (define val2 (string->number (get-col-from-row line val2-col)))
-      
-      (when val1 
-        (define name (get-col-from-row line name-col))
-        ;    (displayln (string-append team ": For: " (number->string for-goals) " Against: " (number->string against-goals)))
+      (when (> (string-length line) 1)
+        (define val1 (string->number (get-col-from-row line val1-col)))
+        (define val2 (string->number (get-col-from-row line val2-col)))
         
-        (when name 
-          (define spread (abs (- val1 val2)))
-          (when (or (not min-spread) (< spread min-spread))
-            
-            ;        (displayln "BEFORE")
-            ;        (display "\tmin-spread :") (displayln min-spread)
-            ;        (display "\tspread :") (displayln spread)
-            
-            (set! min-spread spread)
-            (set! min-spread-team name)
-            
-            ;        (displayln "AFTER")
-            ;        (display "\tspread :") (displayln spread)
-            ;        (display "\tmin-spread :") (displayln min-spread))
-            
+        (when val1 
+          (define name (get-col-from-row line name-col))
+          (when name 
+            (define spread (abs (- val1 val2)))
+            (when (or (not min-spread) (< spread min-spread))
+              (set! min-spread spread)
+              (set! min-spread-team name)
+              )
             )
           )
         )
       )
     
-    (display (string-append "min-spread-team: " min-spread-team))
+    (displayln (string-append "min-spread: " min-spread-team))
     (close-input-port in)
     )
   )
+
+(get-min-spread "../weather.dat" '(2 2) '(12 2) '(6 2))
+(get-min-spread "../football.dat" '(7 16) '(43 2) '(50 2))
