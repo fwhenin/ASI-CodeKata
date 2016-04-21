@@ -27,8 +27,7 @@ public class DifferenceDataTranslator {
             // convert the minuend and subtrahend and calculate the difference
             if columnIndices.contains(minuendIndex) && columnIndices.contains(subtrahendIndex) {
                 if let minuend = toDouble(columns[minuendIndex]),
-                    let subtrahend = toDouble(columns[subtrahendIndex])
-                    where minuendIndex < columns.count && subtrahendIndex < columns.count {
+                    let subtrahend = toDouble(columns[subtrahendIndex]) {
                     
                     let differenceData = DifferenceData(name: columns[config.nameIndex], difference: abs(minuend - subtrahend))
                     
