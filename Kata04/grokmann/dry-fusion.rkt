@@ -15,7 +15,7 @@
        [val1-col '(43 2)]
        [val2-col '(50 2)]
        [min-spread-team ""]
-       [min-spread -1])
+       [min-spread #f])
     
     (define in (open-input-file file-name))
     
@@ -29,7 +29,7 @@
         
         (when name 
           (define spread (abs (- val1 val2)))
-          (when (or (< spread min-spread) (< min-spread 0))
+          (when (or (not min-spread) (< spread min-spread))
             
             ;        (displayln "BEFORE")
             ;        (display "\tmin-spread :") (displayln min-spread)
