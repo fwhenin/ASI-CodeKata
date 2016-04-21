@@ -21,8 +21,23 @@ class Football {
         }
     }
     
+    internal struct DifferenceProcessorConfig {
+        var nameIndex: Int
+        var minuendIndex: Int
+        var subtrahendIndex: Int
+        var ignoreRows: [Int]
+        
+        init(nameIndex: Int, minuendIndex: Int, subtrahendIndex: Int, ignoreRows: [Int]) {
+            self.nameIndex = nameIndex
+            self.minuendIndex = minuendIndex
+            self.subtrahendIndex = subtrahendIndex
+            self.ignoreRows = ignoreRows
+        }
+    }
+    
     init(data: String) {
-        self.data = processData(data, nameIndex: 1, minuendIndex: 6, subtrahendIndex: 8, ignoreRows: 0, 18)
+        let config = DifferenceProcessorConfig(nameIndex: 1, minuendIndex: 6, subtrahendIndex: 8, ignoreRows: [0, 18])
+        self.data = processData(data, config: config)
     }
     
     func getTeamWithMinScoreDifference() -> String {
@@ -30,21 +45,21 @@ class Football {
         return minTeam
     }
     
-    private func processData(data: String, nameIndex: Int, minuendIndex: Int, subtrahendIndex: Int, ignoreRows: Int...) -> [DifferenceData] {
+    private func processData(data: String, config: DifferenceProcessorConfig) -> [DifferenceData] {
         var result = [DifferenceData]()
         
         // split file by lines
         let lines = data.characters.split("\n")
         for (index, line) in lines.enumerate() {
-            if !ignoreRows.contains(index) {
+            if !config.ignoreRows.contains(index) {
                 
                 // split into columns
                 let columns = line.split(" ").map(String.init)
                 
                 // convert the minuend and subtrahend and calculate the difference up front
-                let minuend = Double(columns[minuendIndex])!
-                let subtrahend = Double(columns[subtrahendIndex])!
-                let differenceData = DifferenceData(name: columns[nameIndex], difference: abs(minuend - subtrahend))
+                let minuend = Double(columns[config.minuendIndex])!
+                let subtrahend = Double(columns[config.subtrahendIndex])!
+                let differenceData = DifferenceData(name: columns[config.nameIndex], difference: abs(minuend - subtrahend))
                 
                 // append to result
                 result.append(differenceData)
