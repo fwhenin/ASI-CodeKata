@@ -12,12 +12,10 @@ public struct DifferenceDataMungerConfig {
     var nameIndex: Int
     var minuendIndex: Int
     var subtrahendIndex: Int
-    var ignoreRows: [Int]
     
-    public init(nameIndex: Int, minuendIndex: Int, subtrahendIndex: Int, ignoreRows: [Int]) {
+    public init(nameIndex: Int, minuendIndex: Int, subtrahendIndex: Int) {
         self.nameIndex = nameIndex
         self.minuendIndex = minuendIndex
         self.subtrahendIndex = subtrahendIndex
-        self.ignoreRows = ignoreRows
     }
 }

@@ -11,7 +11,7 @@ import DifferenceCommon
 
 class Football: DifferenceDataMunger {
     init(data: String) {
-        let config = DifferenceDataMungerConfig(nameIndex: 1, minuendIndex: 6, subtrahendIndex: 8, ignoreRows: [0, 18])
+        let config = DifferenceDataMungerConfig(nameIndex: 1, minuendIndex: 6, subtrahendIndex: 8)
         super.init(data: data, config: config)
     }
 }

@@ -14,25 +14,34 @@ public class DifferenceDataTranslator {
     
     public func toDifferenceDataArray(data: String, config: DifferenceDataMungerConfig) -> [DifferenceData] {
         var result = [DifferenceData]()
+        let minuendIndex = config.minuendIndex
+        let subtrahendIndex = config.subtrahendIndex
         
         // split file by lines
-        let lines = data.characters.split("\n")
-        for (index, line) in lines.enumerate() {
-            if !config.ignoreRows.contains(index) {
-                
-                // split into columns
-                let columns = line.split(" ").map(String.init)
-                
-                // convert the minuend and subtrahend and calculate the difference
-                let minuend = Double(columns[config.minuendIndex].stringByTrimmingCharactersInSet(kTrimCharacterSet))!
-                let subtrahend = Double(columns[config.subtrahendIndex].stringByTrimmingCharactersInSet(kTrimCharacterSet))!
-                let differenceData = DifferenceData(name: columns[config.nameIndex], difference: abs(minuend - subtrahend))
-                
-                // append to result
-                result.append(differenceData)
+        for line in data.characters.split("\n") {
+            
+            // split into columns
+            let columns = line.split(" ").map(String.init)
+            let columnIndices = columns.indices
+            
+            // convert the minuend and subtrahend and calculate the difference
+            if columnIndices.contains(minuendIndex) && columnIndices.contains(subtrahendIndex) {
+                if let minuend = toDouble(columns[minuendIndex]),
+                    let subtrahend = toDouble(columns[subtrahendIndex])
+                    where minuendIndex < columns.count && subtrahendIndex < columns.count {
+                    
+                    let differenceData = DifferenceData(name: columns[config.nameIndex], difference: abs(minuend - subtrahend))
+                    
+                    // append to result
+                    result.append(differenceData)
+                }
             }
         }
         
         return result
+    }
+    
+    private func toDouble(data: String) -> Double? {
+        return Double(data.stringByTrimmingCharactersInSet(kTrimCharacterSet))
     }
 }

@@ -11,7 +11,7 @@ import DifferenceCommon
 
 class WeatherData: DifferenceDataMunger {
     init(data: String) {
-        let config = DifferenceDataMungerConfig(nameIndex: 0, minuendIndex: 1, subtrahendIndex: 2, ignoreRows: [0])
+        let config = DifferenceDataMungerConfig(nameIndex: 0, minuendIndex: 1, subtrahendIndex: 2)
         super.init(data: data, config: config)
     }
 }
