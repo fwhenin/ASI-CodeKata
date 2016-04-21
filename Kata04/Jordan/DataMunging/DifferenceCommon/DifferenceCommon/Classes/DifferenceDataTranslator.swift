@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let kTrimCharacterSet = NSCharacterSet(charactersInString: "*")
+private let kTrimCharacterSet = NSCharacterSet.decimalDigitCharacterSet().invertedSet
 
 public class DifferenceDataTranslator {
     
