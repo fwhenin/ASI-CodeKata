@@ -1,34 +1,39 @@
 require_relative 'utilities'
 class DataMungor
   def self.findMinAndMax(filename, returnValueIdx, maxIdx, minIdx)
-    allData = Utilities.getDataFromFile(filename)
+    dataRows = Utilities.getDataFromFile(filename)
+
+    # used to keep track of current difference to compare against
     finalValue = 0
     finalDifference = nil
-    # Determine day with smallest difference between min and max
 
-    for data in allData
-        value = data[returnValueIdx]
-        max = data[maxIdx]
-        min = data[minIdx]
+    for dataRow in dataRows
+        displayValue = dataRow[returnValueIdx]
+        max = dataRow[maxIdx]
+        min = dataRow[minIdx]
 
-        if Utilities.isNullOrEmpty(value)
+        # if the displayValue is null or empty, there's nothing to show
+        if Utilities.isNullOrEmpty(displayValue)
           next
         end
 
-
-          if !Utilities.isInteger(min) || !Utilities.isInteger(max)
-            next
-          end
-
+        # make sure they're cleaned up a bit (i.e. remove the * from the weather.dat)
         max = Utilities.cleanUpInteger(max)
         min = Utilities.cleanUpInteger(min)
+
+        # if either of the min and max aren't integers, NEXT
+        if !Utilities.isInteger(min) || !Utilities.isInteger(max)
+          next
+        end
 
         diff = max - min;
         diff = diff.abs
 
+        # checking against previous loop, or if it's the first time then
+        # apply it to the holder variables
         if finalDifference == nil || diff < finalDifference
           finalDifference = diff
-          finalValue = value
+          finalValue = displayValue
         end
     end
 

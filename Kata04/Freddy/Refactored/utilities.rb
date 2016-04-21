@@ -6,8 +6,11 @@ class Utilities
     return data
   end
 
-  def self.isInteger(string)
-    return /\A\d+\z/.match(string)
+  def self.isInteger(val)
+    if val.is_a? Integer
+      return true
+    end
+    return /\A\d+\z/.match(val)
   end
 
   def self.isNullOrEmpty(string)
@@ -15,6 +18,9 @@ class Utilities
   end
 
   def self.cleanUpInteger(string)
+    if isInteger(string)
+      return string.to_i
+    end
     return string.gsub(/[^0-9]/, '').to_i
   end
 end
