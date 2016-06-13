@@ -45,12 +45,22 @@ namespace Anagrams
             Assert.AreEqual(expectedCount, result.Count);
         }
 
-        [TestCase("cat","act", true)]
+        [TestCase("cat", "act", true)]
+        [TestCase("cat", "cat", false)]
         public void WordsAreAnagramsReturnsExpectedResult(string word1, string word2, bool expectedResult)
         {
             var result = Anagrammer.AreAnagrams(word1, word2);
 
-            Assert.AreEqual(result, expectedResult);
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void WhenWordIsNull_FindAnagramsInList_ReturnsEmptyList()
+        {
+            string word = null;
+            var wordlist = new List<string>();
+            var result = Anagrammer.FindAnagramsInList(word, wordlist);
+            Assert.AreEqual(new List<string>(), result);
         }
     }
 }
