@@ -80,5 +80,14 @@ namespace Anagrams
             var result = Anagrammer.FindAnagramsInList(word, wordlist);
             Assert.AreEqual(new List<string>(), result);
         }
+
+        [Test]
+        public void WhenWordListContainsOnlyGivenWord_FindAnagramsInList_ReturnsListWithThatWord()
+        {
+            string word = "right";
+            List<string> wordlist = new List<string> { "right" };
+            var result = Anagrammer.FindAnagramsInList(word, wordlist);
+            Assert.AreEqual(new List<string>(), result);
+        }
     }
 }

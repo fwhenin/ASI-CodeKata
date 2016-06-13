@@ -41,6 +41,8 @@ namespace Anagrams
         {
             var result = new List<string>();
 
+            result = wordlist.Where(x => AreAnagrams(word, x)).ToList();
+
             return result;
         }
     }
