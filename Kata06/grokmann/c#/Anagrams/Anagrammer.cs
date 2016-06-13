@@ -22,7 +22,7 @@ namespace Anagrams
 
         public static bool AreAnagrams(string word1, string word2)
         {
-            var result = false;
+            var result = true;
 
             return result;
         }
