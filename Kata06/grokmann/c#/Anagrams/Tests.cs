@@ -62,5 +62,23 @@ namespace Anagrams
             var result = Anagrammer.FindAnagramsInList(word, wordlist);
             Assert.AreEqual(new List<string>(), result);
         }
+
+        [Test]
+        public void WhenWordListIsNull_FindAnagramsInList_ReturnsEmptyList()
+        {
+            string word = String.Empty;
+            List<string> wordlist = null;
+            var result = Anagrammer.FindAnagramsInList(word, wordlist);
+            Assert.AreEqual(new List<string>(), result);
+        }
+
+        [Test]
+        public void WhenWordListHasNoAnagrams_FindAnagramsInList_ReturnsEmptyList()
+        {
+            string word = "right";
+            List<string> wordlist = new List<string> { "wrong" };
+            var result = Anagrammer.FindAnagramsInList(word, wordlist);
+            Assert.AreEqual(new List<string>(), result);
+        }
     }
 }
