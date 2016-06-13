@@ -46,7 +46,8 @@ namespace Anagrams
         }
 
         [TestCase("cat", "act", true)]
-        [TestCase("cat", "cat", false)]
+        [TestCase("cat", "cat", true)]
+        [TestCase("cat", "dog", false)]
         public void WordsAreAnagramsReturnsExpectedResult(string word1, string word2, bool expectedResult)
         {
             var result = Anagrammer.AreAnagrams(word1, word2);
@@ -87,7 +88,7 @@ namespace Anagrams
             string word = "right";
             List<string> wordlist = new List<string> { "right" };
             var result = Anagrammer.FindAnagramsInList(word, wordlist);
-            Assert.AreEqual(new List<string>(), result);
+            Assert.AreEqual(wordlist, result);
         }
     }
 }

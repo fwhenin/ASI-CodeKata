@@ -24,10 +24,10 @@ namespace Anagrams
         {
             var result = false;
 
-            if (word1 != word2 && word1.Length == word2.Length)
+            if (word1.Length == word2.Length)
             {
-                var alphabetizedWord1 = word1.ToArray().OrderBy(x => x.ToString()).ToString();
-                var alphabetizedWord2 = word2.ToArray().OrderBy(x => x.ToString()).ToString();
+                var alphabetizedWord1 = new string(word1.ToArray().OrderBy(x => x.ToString()).ToArray());
+                var alphabetizedWord2 = new string(word2.ToArray().OrderBy(x => x.ToString()).ToArray());
                 if (alphabetizedWord1 == alphabetizedWord2)
                 {
                     result = true;
@@ -41,7 +41,10 @@ namespace Anagrams
         {
             var result = new List<string>();
 
-            result = wordlist.Where(x => AreAnagrams(word, x)).ToList();
+            if (wordlist != null)
+            {
+                result = wordlist.Where(x => AreAnagrams(word, x)).ToList();
+            }
 
             return result;
         }
