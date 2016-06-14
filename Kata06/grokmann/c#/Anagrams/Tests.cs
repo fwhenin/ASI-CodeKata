@@ -90,5 +90,27 @@ namespace Anagrams
             var result = Anagrammer.FindAnagramsInList(word, wordlist);
             Assert.AreEqual(wordlist, result);
         }
+
+        [Test]
+        public void WhenWordListContainsAnagrams_FindAnagramsInList_ReturnsCorrectList()
+        {
+            string word = "cat";
+            List<string> wordlist = new List<string> { "tac", "act", "wrong", "excellent" };
+            List<string> expectedWordlist = new List<string> { "act", "tac" };
+
+            var result = Anagrammer.FindAnagramsInList(word, wordlist).OrderBy(x => x);
+            Assert.AreEqual(expectedWordlist, result);
+        }
+
+        [Test]
+        public void AreEqualWorksAsExpectedOnLists()
+        {
+            List<string> wordlist = new List<string> { "act", "tac" };
+            List<string> expectedWordlist = new List<string> { "tac", "act" };
+
+            Assert.AreNotEqual(expectedWordlist, wordlist);
+            //have to order by elements or it fails
+            Assert.AreEqual(expectedWordlist.OrderBy(x => x), wordlist.OrderBy(x => x));
+        }
     }
 }
