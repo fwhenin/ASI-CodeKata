@@ -46,7 +46,7 @@ namespace Anagrams
         }
 
         [TestCase("cat", "act", true)]
-        [TestCase("cat", "cat", true)]
+        [TestCase("cat", "cat", false)]
         [TestCase("cat", "dog", false)]
         public void WordsAreAnagramsReturnsExpectedResult(string word1, string word2, bool expectedResult)
         {
@@ -83,12 +83,14 @@ namespace Anagrams
         }
 
         [Test]
-        public void WhenWordListContainsOnlyGivenWord_FindAnagramsInList_ReturnsListWithThatWord()
+        public void WhenWordListContainsOnlyGivenWord_FindAnagramsInList_ReturnsAnEmptyList()
         {
             string word = "right";
             List<string> wordlist = new List<string> { "right" };
+            var expectedResult = new List<string>();
+
             var result = Anagrammer.FindAnagramsInList(word, wordlist);
-            Assert.AreEqual(wordlist, result);
+            Assert.AreEqual(expectedResult, result);
         }
 
         [Test]

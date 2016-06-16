@@ -24,7 +24,7 @@ namespace Anagrams
         {
             var result = false;
 
-            if (word1.Length == word2.Length)
+            if (word1.Length == word2.Length && word1 != word2)
             {
                 var alphabetizedWord1 = new string(word1.ToArray().OrderBy(x => x.ToString()).ToArray());
                 var alphabetizedWord2 = new string(word2.ToArray().OrderBy(x => x.ToString()).ToArray());
