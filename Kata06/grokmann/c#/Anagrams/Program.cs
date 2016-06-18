@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Anagrams
 {
@@ -8,13 +11,12 @@ namespace Anagrams
 
         static void Main(string[] args)
         {
-            var wordlist = File.ReadAllLines(filepath);
+            var wordlist = File.ReadAllLines(filepath).ToList();
+            var alphabeticalCharsAndWords = new List<Tuple<string, string>>();
+            var anagrams = new List<List<string>>();
 
-            foreach (var word in wordlist)
-            {
-                
-            }
+            alphabeticalCharsAndWords = Anagrammer.PairAlphabeticalCharsWithWords(wordlist);
+            var result = alphabeticalCharsAndWords.GroupBy(x => x.Item1);
         }
-
     }
 }

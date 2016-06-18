@@ -114,5 +114,79 @@ namespace Anagrams
             //have to order by elements or it fails
             Assert.AreEqual(expectedWordlist.OrderBy(x => x), wordlist.OrderBy(x => x));
         }
+
+        [Test]
+        public void GivenAnEmptyWordList_ProcessList_ReturnsAnEmptyListOfListsOfWords()
+        {
+            var wordlist = new List<string>();
+            var expectedResult = new List<List<string>>();
+
+            var result = Anagrammer.ProcessList(wordlist);
+
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Ignore("Going a different direction.")]
+        public void ProcessList_ReturnsListOfListsOfWordsAsExpected()
+        {
+            var wordlist = new List<string>
+            {
+                "act",
+                "cat",
+                "rate",
+                "tare",
+                "tear",
+                "zephyr"
+            };
+
+            var expectedResult = new List<List<string>>
+            {
+                new List<string> {
+                    "act", "cat"
+                },
+                new List<string> {
+                    "rate", "tare", "tear"
+                },
+                new List<string> {
+                    "zephyr"
+                }
+            };
+
+            var result = Anagrammer.ProcessList(wordlist);
+
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void GivenAnEmptyList_PairAlphabetizedWords_ReturnsAnEmptyList()
+        {
+            var wordlist = new List<string>();
+
+            var expectedResult = new List<Tuple<string, string>>();
+
+            var result = Anagrammer.PairAlphabeticalCharsWithWords(wordlist);
+
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void PairAlphabetizedWords()
+        {
+            var wordlist = new List<string>
+            {
+                "act", "cat", "dog"
+            };
+
+            var expectedResult = new List<Tuple<string, string>>
+            {
+                new Tuple<string, string>("act", "act"),
+                new Tuple<string, string>("act", "cat"),
+                new Tuple<string, string>("dgo", "dog")
+            };
+
+            var result = Anagrammer.PairAlphabeticalCharsWithWords(wordlist);
+
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }

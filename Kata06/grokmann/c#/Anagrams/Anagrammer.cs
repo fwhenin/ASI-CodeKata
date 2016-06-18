@@ -48,5 +48,48 @@ namespace Anagrams
 
             return result;
         }
+
+        public static List<List<string>> ProcessList(List<string> wordlist)
+        {
+            var result = new List<List<string>>();
+
+            result = ProcessListHelper(wordlist.FirstOrDefault(), wordlist, result);
+
+            return result;
+        }
+
+        private static List<List<string>> ProcessListHelper(string word, List<string> wordlist, List<List<string>> result)
+        {
+            if (wordlist.Any())
+            {
+                var tempList = new List<string> { word };
+                var testedWord = wordlist.First();
+                wordlist.Remove(testedWord);
+
+                if (AreAnagrams(testedWord, word))
+                {
+                    tempList.Add(testedWord);
+                }
+
+                result = ProcessListHelper(word, wordlist, result);
+
+                result.Add(tempList);
+            }
+
+            return result;
+        }
+
+        public static List<Tuple<string, string>> PairAlphabeticalCharsWithWords(List<string> wordlist)
+        {
+            var result = new List<Tuple<string, string>>();
+
+            foreach (var word in wordlist)
+            {
+                var alphabeticalCharString = new string(word.ToArray().OrderBy(x => x.ToString()).ToArray());
+                result.Add(new Tuple<string, string>(alphabeticalCharString, word));
+            }
+
+            return result;
+        }
     }
 }
