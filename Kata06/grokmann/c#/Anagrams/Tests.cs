@@ -188,5 +188,33 @@ namespace Anagrams
 
             Assert.AreEqual(expectedResult, result);
         }
+
+        [TestCase("", "")]
+        public void AllAnagramPermutationsAreCreated(string testWord, string expectedResult)
+        {
+            var result = Anagrammer.AlphabetizeByChar(testWord);
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void GetListOfAnagrams()
+        {
+            var wordlist = new List<string>
+            {
+                "act", "cat", "dog", "eat", "tea"
+            };
+
+            var expectedResult = new List<List<string>>
+            {
+                new List<string> { "act", "cat" },
+                new List<string> { "dog" },
+                new List<string> { "eat", "tea" }
+            };
+
+            var result = Anagrammer.GetListOfAnagrams(wordlist);
+
+            Assert.AreEqual(expectedResult.First().First(), result.First().First());
+            Assert.AreEqual(expectedResult.Last().Last(), result.Last().Last());
+        }
     }
 }

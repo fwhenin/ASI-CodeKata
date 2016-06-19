@@ -91,5 +91,17 @@ namespace Anagrams
 
             return result;
         }
+
+        public static string AlphabetizeByChar(string word)
+        {
+            return new string(word.ToArray().OrderBy(y => y.ToString()).ToArray());
+        }
+
+        public static List<List<string>> GetListOfAnagrams(List<string> wordlist)
+        {
+            var result = new List<List<string>>();
+            result = wordlist.OrderBy(x => x).GroupBy(word => new string(word.ToArray().OrderBy(y => y.ToString()).ToArray()), x => x, (key, words) => words.OrderBy(x => x).ToList()).ToList();
+            return result;
+        }
     }
 }

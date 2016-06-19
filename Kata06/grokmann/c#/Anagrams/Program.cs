@@ -7,16 +7,28 @@ namespace Anagrams
 {
     class Program
     {
-        private const string filepath = @"..\..\data\wordlist.txt";
+        private const string filepath = @"..\..\wordlist.txt";
 
         static void Main(string[] args)
         {
             var wordlist = File.ReadAllLines(filepath).ToList();
-            var alphabeticalCharsAndWords = new List<Tuple<string, string>>();
-            var anagrams = new List<List<string>>();
+            var anagrams = Anagrammer.GetListOfAnagrams(wordlist);
 
-            alphabeticalCharsAndWords = Anagrammer.PairAlphabeticalCharsWithWords(wordlist);
-            var result = alphabeticalCharsAndWords.GroupBy(x => x.Item1);
+            string anagramsOutput = @"anagrams.txt";
+
+            using (StreamWriter sr = new StreamWriter(anagramsOutput))
+            {
+                foreach (var anagramList in anagrams)
+                {
+                    foreach (var word in anagramList)
+                    {
+                        sr.Write(word + ",");
+                    }
+                    sr.WriteLine();
+                }
+
+                File.SetAttributes(anagramsOutput, FileAttributes.Normal);
+            }
         }
     }
 }
